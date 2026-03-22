@@ -1,0 +1,20 @@
+hello2.c
+
+#include <linux/init.h>
+#include <linux/module.h>
+#include <linux/kernel.h>
+static int __init hello2_init(void)
+{
+    printk(KERN_INFO "Hello World: Module Loaded\n");
+    return 0;
+}
+static void __exit hello2_exit(void)
+{
+    printk(KERN_INFO "Hello World: Module Removed\n");
+}
+module_init(hello2_init);
+module_exit(hello2_exit);
+MODULE_LICENSE("GPL");
+MODULE_AUTHOR("Lakshana");
+MODULE_DESCRIPTION("Simple Hello World Kernel Module");
+
